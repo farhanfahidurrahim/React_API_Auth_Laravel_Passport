@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Head from './common/Head';
 import reportWebVitals from './reportWebVitals';
+
+//important
+import axios from 'axios';
+axios.defaults.baseURL='http://localhost/react_lv8/api/';
+
+//Bearer Token save
+axios.defaults.headers.common['Authorization']='Bearer '+localStorage.getItem('token')
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Head />
   </React.StrictMode>
 );
 
